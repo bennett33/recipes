@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .links a {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .container {
+                margin-left: 20px;
+            }
+        .col-container {
+            display: flex;
+        }
+        .column {
+            margin: 25px;
+            padding: 20px;
+        }
+        .recipe-desc {
+            height:100px;
+            width:300px;
+        }
+        #btn-id {
+            margin-top: 10px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-bar">
+                <h1>New Recipe</h1>
+                <div class="links">
+                    <a href="/dashboard" class="dashboard">Dashboard</a>
+                    <a href="/logout" class="logout">Logout</a>
+                </div>
+            </div>
+            <form action="/recipes/create" method='post'>
+                <div class="col-container">
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea name="description" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="instructions">Instructions:</label>
+                            <textarea name="instructions" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>
+                            Date Made On:
+                            <input type="date" name="date_made" value="" class="form-control">
+                        </p>
+                        <p>Under 30 Minutes?</p>
+                        <p>
+                            <input type="radio" id="yes" name="under_30" value="1">
+                            <label for="1">Yes</label><br>
+                            <input type="radio" id="no" name="under_30" value="0">
+                            <label for="0">No</label><br>
+                        </p>
+                        <input type="submit" value="Add Recipe" id="btn-id">
+                    </div>
+                </div>
+            </form>
+    </body>
+    </html>
